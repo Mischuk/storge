@@ -7,15 +7,7 @@ html(lang="ru").no-js
     meta(http-equiv="x-ua-compatible" content="ie=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="msapplication-tap-highlight" content="no")
-    meta(name="description" content="A description of the page")
-    meta(name="subject" content="тематика вашего сайта")
-    meta(name="robots" content="index,follow,noodp")
-    meta(name="googlebot" content="index,follow")
-    meta(name="google" content="nositelinkssearchbox")
-    meta(name="google" content="notranslate")
-    meta(name="rating" content="General")
-    meta(name="format-detection" content="telephone=no")
-    meta(http-equiv='set-cookie' content='name=value; expires=date; path=url')
+    link(href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet")
     link(rel="stylesheet" href="css/plugins.css")
     link(rel="stylesheet" href="css/app.css")
     script(src="js/modernizr.js")
@@ -26,6 +18,189 @@ html(lang="ru").no-js
     .container
       block content
     include ../footer/m_footer
+    // Modal's background
+    .layout
+    // Popups: Success
+    a(class="popup" id="success" href="#popup-success")
+    #popup-success.popup-window.zoom-anim-dialog.mfp-hide
+      .title Спасибо
+      p Благодарим за ваше обращение!<br>Наш менеджер свяжется с вами в ближайшее время.
+    // Popups: Order
+    #popup-order.popup-window.zoom-anim-dialog.mfp-hide
+      .title Запрос на расчет стоимости
+      form
+        .form-row
+          label.required
+            span.label ФИО
+            input(type="text" name="help-name" placeholder="Иванов Иван Иванович" required autocomplete="off")
+        .form-row
+          label.required
+            span.label E-mail
+            input(type="email" name="help-email" placeholder="info@yourmail.com" required autocomplete="off")
+        .form-row
+          label
+            span.label Телефон
+            input(type="tel" class="mask-tel" name="help-tel" placeholder="+7 (___) ___-__-__" autocomplete="off")
+        .form-row
+          label.required
+            span.label Текст вопроса
+            textarea(name="help-message" placeholder="Текст вопроса" required)
+        .form-row
+          .attach-file
+            label
+              input(type="file" name="help-file")
+              span.icon
+              span.text Прикрепить файл
+            .attach-file-result
+              .val
+              .remove(title="Удалить файл")
+        .form-row
+          button(class="button red" type="submit") Отправить
+    // Popups: Help
+    #popup-help.popup-window.zoom-anim-dialog.mfp-hide
+      .title Запрос на бесплатную консультацию
+      form
+        .form-row
+          label.required
+            span.label ФИО
+            input(type="text" name="help-name" placeholder="Иванов Иван Иванович" required autocomplete="off")
+        .form-row
+          label.required
+            span.label E-mail
+            input(type="email" name="help-email" placeholder="info@yourmail.com" required autocomplete="off")
+        .form-row
+          label
+            span.label Телефон
+            input(type="tel" class="mask-tel" name="help-tel" placeholder="+7 (___) ___-__-__" autocomplete="off")
+        .form-row
+          label.required
+            span.label Текст вопроса
+            textarea(name="help-message" placeholder="Текст вопроса" required)
+        .form-row
+          .attach-file
+            label
+              input(type="file" name="help-file")
+              span.icon
+              span.text Прикрепить файл
+            .attach-file-result
+              .val
+              .remove(title="Удалить файл")
+        .form-row
+          button(class="button red" type="submit") Отправить
+    // Popups: Callback
+    #popup-callback.popup-window.zoom-anim-dialog.mfp-hide
+      .title Обратный звонок
+      form
+        .form-row
+          label.required
+            span.label ФИО
+            input(type="text" name="callback-name" placeholder="Иванов Иван Иванович" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Телефон
+            input(type="tel" class="mask-tel" name="callback-tel" placeholder="+7 (___) ___-__-__" required autocomplete="off")
+        .form-row
+          button(class="button red" type="submit") Отправить
+    // Popups: Order
+    #popup-buy.popup-window.zoom-anim-dialog.mfp-hide
+      .order-image
+        img(src="images/schemas/1.jpg" alt="")
+      .title
+        h3 КТП мачтового типа до 250 кВА
+        .cost 100 000 руб.
+      form
+        .form-row
+          label.required
+            span.label Наименование организации
+            input(type="text" name="buy-name" placeholder="" required autocomplete="off")
+        .form-row
+          label.required
+            span.label ОГРН
+            input(type="text" name="buy-ogrn" placeholder="" required autocomplete="off")
+        .form-row
+          label.required
+            span.label ИНН
+            input(type="text" name="buy-inn" placeholder="" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Телефон
+            input(type="tel" class="mask-tel" name="buy-tel" placeholder="+7 (___) ___-__-__" required autocomplete="off")
+        .form-row
+          label.required
+            span.label E-mail
+            input(type="email" name="buy-email" placeholder="info@yourmail.com" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Ответственное лицо
+            input(type="text" name="buy-user" placeholder="Иванов Иван Иванович" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Комментарий
+            textarea(name="buy-message" placeholder="Дополнительная информация" required)
+        .form-row
+          button(class="button red" type="submit") Отправить запрос
+    // Popups: Album
+    #popup-album.popup-window.zoom-anim-dialog.mfp-hide
+      .title Получить альбом
+      form
+        .form-row
+          label.required
+            span.label ФИО
+            input(type="text" name="ask-name" placeholder="Иванов Иван Иванович" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Телефон
+            input(type="tel" class="mask-tel" name="ask-tel" placeholder="+7 (___) ___-__-__" required autocomplete="off")
+        .form-row
+          label.required
+            span.label E-mail
+            input(type="email" name="ask-email" placeholder="info@yourmail.com" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Выберите альбом
+            select
+              option(value="1") Альбом #1
+              option(value="2") Альбом #2
+              option(value="3") Альбом #3
+              option(value="4") Альбом #4
+              option(value="5") Альбом #5
+        .form-row
+          label.required
+            span.label Комментарий
+            textarea(name="ask-message" placeholder="Дополнительная информация" required)
+        .form-row
+          button(class="button red" type="submit") Отправить вопрос
+    // Popups: Ask
+    #popup-ask.popup-window.zoom-anim-dialog.mfp-hide
+      .title Задать вопрос
+      form
+        .form-row
+          label.required
+            span.label ФИО
+            input(type="text" name="ask-name" placeholder="Иванов Иван Иванович" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Телефон
+            input(type="tel" class="mask-tel" name="ask-tel" placeholder="+7 (___) ___-__-__" required autocomplete="off")
+        .form-row
+          label.required
+            span.label E-mail
+            input(type="email" name="ask-email" placeholder="info@yourmail.com" required autocomplete="off")
+        .form-row
+          label.required
+            span.label Комментарий
+            textarea(name="ask-message" placeholder="Дополнительная информация" required)
+        .form-row
+          .attach-file
+            label
+              input(type="file" name="ask-file")
+              span.icon
+              span.text Прикрепить файл
+            .attach-file-result
+              .val
+              .remove(title="Удалить файл")
+        .form-row
+          button(class="button red" type="submit") Отправить вопрос
     // Javascript
     script(src="js/jquery.min.js")
     script(src="js/plugins.js")

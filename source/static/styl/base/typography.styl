@@ -1,4 +1,5 @@
 body
+  font-family 'Noto Sans', sans-serif
   font-size 18px
   line-height 1.2
 h1, h2, h3, h4, h5, h6
@@ -18,19 +19,50 @@ h6
   font-size 12px
 a[href^="tel"]
   cursor default
+a[href^="email"]
+  color $blue
 p
   margin-top 0
   margin-bottom 20px
 article
   position relative
+  font-size 14px
+  line-height 1.6
+  padding-bottom 30px
+  .post-date
+    color #999999
+    font-size 11px
+    margin-bottom 10px
+    text-transform uppercase
+  .backward
+    border-top 1px solid $border
+    padding-top 15px
+    a
+      color $blue
+      &:hover
+        color #000
+        text-decoration none
+  .article-carousel
+    margin-bottom 30px
+  p.lead
+    font-size 18px
+    line-height 28px
+    @media MD
+      font-size 20px
+      line-height 30px
+  p
+    &:last-child
+      margin-bottom 0
   a
-    text-decoration underline
+    color $blue
+    &:hover
+      text-decoration underline
   img
     max-width 100%
     width 100%
     @media SM
       width auto
-      float left
+      // float left
       max-width 100%
       margin-right 25px
       margin-bottom 10px
@@ -38,20 +70,31 @@ article
     margin-bottom 20px
   h2
     font-size 24px
+    @media MD
+      font-size 30px
   h3
     font-size 20px
+    @media MD
+      font-size 26px
   h4
     font-size 16px
+    @media MD
+      font-size 20px
   > ul
     padding-bottom 20px
     li
+      position relative
+      padding-left 20px
       &:before
-        content '•'
-        margin-right 5px
-        font-weight bold
-        color red
+        content ''
+        background: url('../images/sprite.png') no-repeat -150px -50px;
+        width: 12px;
+        height: 12px;
+        position absolute
+        left 0
+        top 4px
       & + li
-        margin-top 5px
+        margin-top 10px
   ol
     li
       counter-increment step-counter
@@ -60,8 +103,55 @@ article
         content counter(step-counter)
         margin-right 10px
         margin-bottom 4px
-        font-size 80%
-        background-color red
-        color #fff
+        font-size 14px
+        color $blue
         font-weight bold
         padding 3px 8px
+        padding-left 0
+
+.section-title
+  padding-bottom 25px
+  &.border
+    padding-bottom 25px
+    margin-bottom 25px
+    border-bottom 1px solid $border
+  h2
+    font-size 30px
+    line-height 1
+    font-weight normal
+    @media MD
+      font-size 40px
+  h3
+    font-size 24px
+    line-height 1
+    font-weight normal
+    @media MD
+      font-size 30px
+
+.page-title
+  padding-top 15px
+  @media SM
+    padding-bottom 30px
+  @media MD
+    padding-bottom 45px
+    padding-top 20px
+    background-repeat no-repeat
+    background-position 50%
+    background-size cover
+  @media screen and (max-width: 767px)
+    background none !important
+    &.blue
+      background #f0f2f7 !important
+  .title
+    font-size 24px
+    font-weight bold
+    color #000
+    @media XS
+      font-size 30px
+    @media SM
+      color #fff
+    @media MD
+      font-size 40px
+
+
+

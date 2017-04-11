@@ -1,0 +1,54 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Вакансии
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/3.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Вакансии
+      .title
+        span Вакансии
+  main
+    aside.m_sidebar.right
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") О компании
+          li: a(href="#") Вакансии
+          li: a(href="#") Контакты
+          li: a(href="#") Новости
+          li: a(href="#") Медиагалерея
+    .content
+      .m_vacancy
+        .item
+          .title
+            a(href="#") Электрогазосварщик
+          .cost До 100 000 руб.
+          .desc Cварка, сборка корпусных металлоконструкций, закладных деталей и других изделий из металла.
+        .item
+          .title
+            a(href="#") Оператор станка ЧПУ лазерной резки
+          .cost До 100 000 руб.
+          .desc Cварка, сборка корпусных металлоконструкций, закладных деталей и других изделий из металла.
+        .item
+          .title
+            a(href="#") Оператор гибочного станка ЧПУ
+          .cost До 100 000 руб.
+          .desc Cварка, сборка корпусных металлоконструкций, закладных деталей и других изделий из металла.
+        .item
+          .title
+            a(href="#") Электромонтажник вторичных цепей
+          .cost До 100 000 руб.
+          .desc Cварка, сборка корпусных металлоконструкций, закладных деталей и других изделий из металла.
+        .item
+          .title
+            a(href="#") Маляр-штукатур
+          .cost До 100 000 руб.
+          .desc Cварка, сборка корпусных металлоконструкций, закладных деталей и других изделий из металла.

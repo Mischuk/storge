@@ -1,0 +1,68 @@
+.m_sidebar-menu
+  position relative
+  margin-bottom 30px
+  display none
+  @media XS
+    display block !important
+  li
+    border 1px solid $border
+    overflow hidden
+    & + li
+      margin-top -1px
+    a
+      anim()
+      display block
+      padding 15px 20px
+      color $blue
+      font-size 14px
+      line-height 20px
+      border-left 3px solid $blue
+      transform translateX(-3px)
+      &.current,
+      &:hover
+        transform translateX(0px)
+        color #000
+
+.bfxd.button
+  position fixed
+  left 0
+  top 50%
+  width 100%
+  z-index 2
+  width 50px
+  height 50px
+  padding 0
+  margin-top -25px
+  border-radius 0 $radius $radius 0
+  text-align center
+  font-family: 'Noto Sans', sans-serif;
+  font-weight bold
+  text-transform uppercase
+  font-size 12px
+  background $blue url("../images/mobile-sidebar.png") no-repeat 50% 50%
+  @media XS
+    display none !important
+  &:before,
+  &:after
+    anim()
+    content ''
+    position absolute
+    left 50%
+    top 50%
+    margin-left -15px
+    margin-top -3px
+    width 30px
+    height 6px
+    border-radius 1px
+    background #fff
+    opacity 0
+  &:active
+    transform translateY(0)
+  &.open
+    background $blue
+    &:after
+      opacity 1
+      transform rotate(45deg)
+    &:before
+      opacity 1
+      transform rotate(-45deg)

@@ -1,0 +1,36 @@
+.m_docs
+  margin-bottom 30px
+  .list
+    clearfix()
+    margin-top -10px
+  .item
+    margin-bottom 10px
+    @media XS
+      float left
+      width 50%
+    @media LG
+      width 33.333%
+    a
+      position relative
+      display inline-block
+      vertical-align middle
+      padding-left 60px
+      padding-right 10px
+      padding-top 15px
+      padding-bottom 15px
+      font-size 14px
+      line-height 24px
+      color $blue
+      &:after
+        content ''
+        background: url('../images/sprite.png') no-repeat 0 -150px;
+        width: 43px;
+        height: 50px;
+        position absolute
+        left 0
+        top 50%
+        margin-top -(@height/2)
+      &:hover
+        color #000
+        &:after
+          background-position -50px -150px

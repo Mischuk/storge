@@ -1,0 +1,62 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Продукция
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/1.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Продукция
+          li: a(href="#") КТП в металлической оболочке 6(10)/0.4 кВ мощностью 16-2500 кВА
+      .title
+        span КТП в металлической оболочке 6(10)/0.4 кВ мощностью 16-2500 кВА
+  main
+    aside.m_sidebar
+      .m_item.top-attached
+        .label: span Типовая продукция
+        .image
+          a(href="#")
+            img(src="images/products/0.png" alt="")
+        .action: a(href="#") Купить
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") КТП в металлической оболочке 6(10)/0.4 кВ мощностью 16-2500 кВА
+          li: a(href="#") БКТП в железобетонной оболочке 6(10)/0.4 кВ мощностью до 2500 кВА
+          li: a(href="#") КТП блочно-модульного (контейнерного) типа
+          li: a(href="#") БКРП в железобетонных корпусах
+          li: a(href="#") Электротехническое оборудование среднего напряжения
+          li: a(href="#") Электротехническое оборудование низкого напряжения
+          li: a(href="#") Выключатели нагрузки и разъединители
+          li: a(href="#") Инновации
+    .content
+      // Products
+      .m_products
+        .columns.col-3
+          - each post in products_level_2
+            .column
+              if post.top == true
+                .m_item.top-attached
+                  .label #{post.label}
+                  .image
+                    a(href="#")
+                      img(src="#{post.image}" alt="")
+                  .action: a(href="#") Купить
+              else
+                .m_item
+                  .image
+                    a(href="#")
+                      img(src="#{post.image}" alt="")
+                  .title
+                    a(href="#") #{post.title}
+      article
+        h2 Заголовок текста
+        p(lorem="2")
+        p(lorem="6")
+        p(lorem="9")

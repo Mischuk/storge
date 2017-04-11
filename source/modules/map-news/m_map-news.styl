@@ -1,0 +1,28 @@
+.m_map-news
+  @extend .space
+  border-top 1px solid $border
+  .map
+    position relative
+    @media SM
+      float left
+      width 65%
+    @media MD
+      width 74.5%
+    &.full
+      width 100%
+  .news
+    position relative
+    padding 15px 0
+    @media SM
+      float right
+      width 32%
+    @media MD
+      width 23.5%
+    .section-title
+      h3
+        font-size 24px
+        @media LG
+          font-size 30px
+  #map
+    height 400px
+    width 100%

@@ -1,0 +1,81 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Медиагалерея
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/10.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Медиагалерея
+      .title
+        span Медиагалерея
+  main
+    aside.m_sidebar.right
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") О компании
+          li: a(href="#") Вакансии
+          li: a(href="#") Контакты
+          li: a(href="#") Новости
+          li: a(href="#") Медиагалерея
+      .m_sidebar-consult
+        .title Получить бесплатную консультацию
+        p У вас есть вопросы? Наши сотрудники с удовольствием ответят на них.
+        .action
+          a(class="popup button red" href="#popup-help") Отправить запрос
+        .tel
+          span или связаться с нами по телефону
+          a(href="tel:+78123181448") +7 (812) 318-14-48
+    .content
+      .columns.col-2
+        .column
+          .m_media-item
+            a(href="#")
+              .image: img(src="images/gallery/1.jpg" alt="")
+              .title Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+        .column
+          .m_media-item
+            a(href="#")
+              .image: img(src="images/gallery/2.jpg" alt="")
+              .title Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+        .column
+          .m_media-item
+            a(href="#")
+              .image: img(src="images/gallery/3.jpg" alt="")
+              .title Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+        .column
+          .m_media-item
+            a(href="#")
+              .image: img(src="images/gallery/4.jpg" alt="")
+              .title Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+        .column
+          .m_media-item
+            a(href="#")
+              .image: img(src="images/gallery/5.jpg" alt="")
+              .title Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+        .column
+          .m_media-item
+            a(href="#")
+              .image: img(src="images/gallery/6.jpg" alt="")
+              .title Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+      .m_paginations
+        ul
+          li: a(class="prev" href="#")
+          li: a(href="#") 1
+          li: a(href="#") 2
+          li: a(href="#") 3
+          li: a(href="#") 4
+          li: a(href="#") 5
+          li: a(href="#") 6
+          li: a(href="#") 7
+          li: a(href="#") 8
+          li: a(href="#") 9
+          li: a(href="#") 10
+          li: a(class="next" href="#")

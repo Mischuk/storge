@@ -1,0 +1,43 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Продукция
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title.blue(style="background-image: url('images/page-title/1.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Продукция
+      .title Продукция
+  // Products
+  .m_products
+    .wrapper
+      .columns.col-4
+        - each post in products
+          .column
+            if post.top == true
+              .m_item.top-attached
+                .label: span #{post.label}
+                .image
+                  a(href="#")
+                    img(src="#{post.image}" alt="")
+                .action: a(href="#") Купить
+            else
+              .m_item
+                .image
+                  a(href="#")
+                    img(src="#{post.image}" alt="")
+                .title
+                  a(href="#") #{post.title}
+
+      .details-button.center
+        a(href="#") Вся продукция
+  main
+    article
+      h2 Заголовок текста
+      lorem(size="5")

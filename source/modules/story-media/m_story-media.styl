@@ -1,0 +1,95 @@
+.m_story-media
+  @extend .space
+  img
+    max-width 100%
+  .story
+    position relative
+    @media SM
+      float left
+      width 65%
+    @media MD
+      width 74.5%
+    &.full
+      width 100%
+      .m_about-icons
+        margin-bottom 0
+  .media
+    position relative
+    background #f5f7ff
+    border 1px solid $border
+    border-radius $radius
+    padding 15px
+    @media SM
+      float right
+      width 32%
+    @media MD
+      width 23.5%
+    .section-title
+      h3
+        font-size 24px
+        @media LG
+          font-size 30px
+    .list
+      clearfix()
+      @media screen and (min-width: 480px) and (max-width: 767px)
+        margin-top -4%
+    .item
+      margin-top 30px
+      &:first-child
+        margin-top 0
+        @media screen and (min-width: 480px) and (max-width: 767px)
+          margin-top 4%
+      @media screen and (min-width: 480px) and (max-width: 767px)
+        float left
+        width 48%
+        margin-top 0
+        margin-left 4%
+        margin-top 4%
+        &:nth-child(2n+1)
+          margin-left 0
+          clear left
+      &.is-video
+        .image a
+          position relative
+          &:hover
+            &:before
+              background rgba(0,0,0,.7)
+          &:before
+            anim()
+            content ''
+            position absolute
+            left 0
+            top 0
+            width 100%
+            height 100%
+            background rgba(0,0,0,.5)
+          &:after
+            content ''
+            position absolute
+            left 50%
+            top 50%
+            background: url('../images/sprite.png') no-repeat -100px -100px;
+            width: 34px;
+            height: 27px;
+            margin-left -(@width/2)
+            margin-top -(@height/2)
+      .image
+        border 1px solid $border
+        background #fff
+        a
+          display block
+          position relative
+          img
+            display block
+            width 100%
+            height auto
+      .title
+        a
+          display inline-block
+          vertical-align middle
+          padding-top 10px
+          color $blue
+          font-size 14px
+          line-height 20px
+          &:hover
+            color $red

@@ -1,0 +1,70 @@
+.m_schemes
+  position relative
+  margin-bottom 30px
+  h3
+    font-weight normal
+    padding-right 90px
+  .slick-arrow
+    width 40px
+    height 40px
+    position absolute
+    top -55px
+    border 1px solid $border
+    font-size 0
+    background none
+    z-index 1
+    &:hover
+      border-color $blue
+    &.slick-disabled
+      opacity .2
+    &:after
+      content ''
+      position absolute
+      background-image url("../images/sprite.png")
+      background-repeat no-repeat
+      width 10px
+      height 16px
+      margin-top -(@height/2)
+      margin-left -(@width/2)
+    &.slick-prev
+      right 40px
+      &:after
+        background-position -250px -150px
+      &:hover:after
+        background-position -250px -100px
+    &.slick-next
+      right 0
+      &:after
+        background-position -200px -150px
+      &:hover:after
+        background-position -200px -100px
+  .slick-list
+    @media XS
+      margin 0 -5px
+  .slide
+    @media XS
+      margin 0 5px
+    .image
+      height 150px
+      line-height 120px
+      border 1px solid $border
+      text-align center
+      padding 10px
+      @media MD
+        height 180px
+      &:hover
+        border-color $red
+    img
+      display inline-block
+      vertical-align middle
+      max-width 100%
+      max-height 100%
+    .title
+      padding-top 5px
+      a
+        font-size 14px
+        text-decoration underline
+        color $blue
+        &:hover
+          color $black
+          text-decoration none

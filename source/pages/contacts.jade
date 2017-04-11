@@ -1,0 +1,88 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Контакты
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/4.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Контакты
+      .title Контактная информация
+  .wrapper
+    .m_contacts(itemscope itemtype="http://schema.org/Organization")
+      .info
+        .contact-info
+          h3 Головной офис компании
+          .row(style="display: none" itemprop="name") СТОРГЕ
+          .row
+            .label Адрес:
+            .value(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress") <span itemprop="addressLocality">г. Шлиссельбург</span>, <span itemprop="streetAddress">Красный тракт, 16А</span>
+          .row
+            .label Телефон:
+            .value <span itemprop="telephone">+7 (812) 318-14-48</span>
+            .value <span itemprop="telephone">+7 (812) 383-77-37</span> (Тел. коммерческого отдела)
+            .value <span itemprop="telephone">+7 (812) 318-14-33</span> (Тел. снабжения)
+          .row
+            .label E-mail:
+            .value <a href="mailto:info@storge.ru" itemprop="email">info@storge.ru</a>
+            .value <a href="mailto:sales@storge.ru" itemprop="email">sales@storge.ru</a> (Коммерческий отдел)
+            .value <a href="mailto:kadr@storge.ru" itemprop="email">kadr@storge.ru</a> (Отдел персонала)
+        .contact-form
+          .m_form
+            .title Обратная связь
+            form
+              .form-row
+                label.required
+                  span.label ФИО
+                  input(type="text" placeholder="Иванов Иван Иванович" required autocomplete="off")
+              .form-row
+                label.required
+                  span.label E-mail
+                  input(type="email" name="buy-email" placeholder="info@yourmail.com" required autocomplete="off")
+              .form-row
+                label.required
+                  span.label Комментарий
+                  textarea(name="buy-message" placeholder="Дополнительная информация" required)
+              .form-row
+                .attach-file
+                  .label &nbsp;
+                  label
+                    input(type="file" name="ask-file")
+                    span.icon
+                    span.text Прикрепить файл
+                  .attach-file-result
+                    .val
+                    .remove(title="Удалить файл")
+              .form-row
+                button(class="button red" type="submit") Отправить
+        .contact-map
+          script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+          script.
+            ymaps.ready(function () {
+                var myMap = new ymaps.Map('map', {
+                        center: [59.932202, 31.005127],
+                        zoom: 14,
+                        controls: ['zoomControl']
+                    }, {
+                        searchControlProvider: 'yandex#search'
+                    }),
+                    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                        hintContent: 'Собственный значок метки',
+                        balloonContent: 'Это красивая метка'
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'images/marker.png',
+                        iconImageSize: [58, 38],
+                        iconImageOffset: [-29, -19]
+                    });
+
+                myMap.geoObjects.add(myPlacemark);
+                myMap.behaviors.disable('scrollZoom');
+            });
+          #map

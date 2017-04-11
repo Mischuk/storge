@@ -1,3 +1,290 @@
 .m_header
-  background #3b3a36
-  height 70px
+  background #fff
+  box-shadow 0 0 10px rgba(0,0,0,.25)
+  @media SM
+    height 170px
+  .wrapper
+    position static
+    @media LG
+      position relative
+  .top-row
+    position relative
+    z-index 150
+    @media SM
+      position static
+      height 50px
+    @media LG
+      background #f7f7f7
+  .bottom-row
+    background #fff
+    position relative
+    z-index 100
+    border-bottom 1px solid $border
+    @media SM
+      height 120px
+      border-bottom none
+  .search
+    position absolute
+    right 0
+    top 22px
+    height 38px
+    transform translateX(-68px)
+    width 38px
+    @media SM
+      top 0
+      right 0
+      transform translateX(-15px)
+      z-index 200
+      height 50px
+      width 50px
+
+    &.focus
+      transform translateX(0)
+      padding-right 68px
+      padding-left 15px
+      width 100%
+      @media SM
+        padding-right 15px
+      form
+        input[type=text]
+          background #fff
+          padding-left 10px
+          padding-right 40px
+          width 100%
+          color #000
+        button[type=submit]
+          display block
+    form
+      position relative
+      width 100%
+      height 100%
+      width 100%
+      text-align right
+      input[type=text]
+        trs(width)
+        display inline-block
+        text-align left
+        width 100%
+        height 100%
+        border 1px solid #e1e4ef
+        border-color #fff
+        border-radius $radius
+        font-size 16px
+        font-family 'Noto Sans', sans-serif
+        background #fff url("../images/search.png") no-repeat 50% 50%
+        width 38px
+        color transparent
+        @media SM
+          width 50px
+          background-color transparent
+          border-color transparent
+          cursor pointer
+        &:focus
+          border-color $blue
+          box-shadow 2px 2px 5px rgba(0,0,0,.1)
+          cursor text
+      button[type=submit]
+        position absolute
+        right 0px
+        top 0px
+        width 38px
+        height 38px
+        background transparent url("../images/search.png") no-repeat 50% 50%
+        border none
+        z-index 1
+        display none
+        @media SM
+          width 50px
+          height 50px
+  .logo
+    text-align left
+    max-width 44px
+    line-height 80px
+    height 80px
+    @media XS
+      max-width 130px
+    @media SM
+      width 170px
+      max-width 170px
+      position absolute
+      left 15px
+      top 32.5px
+      height 55px
+      line-height 55px
+    img
+      max-width 100%
+      display none
+      @media XS
+        display inline-block
+        vertical-align middle
+    a
+      display inline-block
+      vertical-align middle
+      width 44px
+      height 27.5px
+      line-height 80px
+      background url("../images/logo-small.png") no-repeat 0 0
+      background-size contain
+      @media XS
+        background none
+        width auto
+        height auto
+      @media SM
+        line-height 1
+        vertical-align top
+  .menu
+    anim()
+    position absolute
+    left 0
+    top 80px
+    background #fff
+    width 100%
+    box-shadow 0 5px 10px -4px rgba(0,0,0,.25)
+    transform translateX(-100%)
+    @media SM
+      position static
+      transform none
+      box-shadow none
+      background none
+      transition none
+    &.open
+      transform translateX(0%)
+    li
+      border-top 1px solid $border
+      a
+        anim()
+        display block
+        width 100%
+        font-weight bold
+        font-size 15px
+        text-transform uppercase
+        color $black
+        padding 15px 15px
+        border-left 0 solid #fff
+        &:hover
+          color $blue
+          border-left 2px solid $blue
+    .lead-menu
+      @media SM
+        position absolute
+        left 0
+        top -50px
+        width 100%
+        height 50px
+        z-index 1
+        background #f7f7f7
+        padding-left 15px
+        padding-right 100px
+      li
+        @media SM
+          display inline-block
+          vertical-align middle
+          border-top none
+      a
+        @media SM
+          color #999999
+          font-size 14px
+          padding-left 5px
+          padding-right 5px
+          font-weight normal
+          text-transform none
+          &:hover
+            color #000
+            border none
+        @media LG
+          padding-left 15px
+          padding-right 15px
+    .second-menu
+      @media SM
+        position absolute
+        right 0
+        bottom 10px
+        padding-right 10px
+        text-align center
+      @media MD
+        position static
+        line-height 120px
+      @media LG
+        padding-right 50px
+      li
+        @media SM
+          border-top none
+          display inline-block
+          vertical-align middle
+      a
+        @media SM
+          padding-left 5px
+          padding-right 5px
+          &:hover
+            border-left none
+        @media MD
+          font-size 14px
+          padding-top 0
+          padding-bottom 0
+        @media LG
+          font-size 15px
+          padding-left 15px
+          padding-right 15px
+  .menu-mobile
+    position absolute
+    right 15px
+    top 22px
+    width 38px
+    height 38px
+    z-index 1
+    @media SM
+      display none
+  .contacts
+    position absolute
+    left 0
+    top 0
+    width 100%
+    padding-right 45px
+    padding-top 20px
+    text-align center
+    @media XS
+      padding-left 85px
+      padding-right 45px
+    @media SM
+      left auto
+      right 0
+      width auto
+      padding-right 15px
+      padding-top 15px
+    @media MD
+      padding-top 35px
+      text-align right
+    @media LG
+      text-align left
+    .tel
+      font-size 15px
+      font-weight bold
+      @media XS
+        font-size 20px
+      @media LG
+        position relative
+        font-size 24px
+        &:after
+          content ''
+          background: url('../images/sprite.png') no-repeat -50px -100px;
+          width: 40px;
+          height: 40px;
+          position absolute
+          left -50px
+          top 0
+      a
+        color $black
+    .callback
+      font-size 12px
+      @media LG
+        font-size 14px
+      a
+        color $blue
+        border-bottom 1px dashed $blue
+        &:hover
+          color $black
+          border-color $black
+        span
+          display none
+          @media XS
+            display inline

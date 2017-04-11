@@ -1,0 +1,148 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title КТП мачтового типа до 250 кВА
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/1.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Продукция
+          li: a(href="#") КТП в металлической оболочке 6(10)/0.4 кВ мощностью 16-2500 кВА
+          li: a(href="#") КТП мачтового типа до 250 кВА
+      .title КТП мачтового типа до 250 кВА
+  main
+    aside.m_sidebar
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") МТП
+          li: a(href="#") СТП
+          li: a(href="#") МТП-2
+          li: a(href="#") КТП-250кВ
+          li: a(href="#") КТП-100кВ
+      .m_sidebar-consult
+        .title Получить бесплатную консультацию
+        p У вас есть вопросы? Наши сотрудники с удовольствием ответят на них.
+        .action
+          a(class="popup button red" href="#popup-help") Отправить запрос
+        .tel
+          span или связаться с нами по телефону
+          a(href="tel:+78123181448") +7 (812) 318-14-48
+    .content
+      .m_product-cart.full
+        .gallery
+          .product-gallery-lead
+            .slide
+              .image: a(href="images/schemas/1.jpg"): img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/2.jpg"): img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/1.jpg"): img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/2.jpg"): img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/1.jpg"): img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/2.jpg"): img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/1.jpg"): img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/2.jpg"): img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/1.jpg"): img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: a(href="images/schemas/2.jpg"): img(src="images/schemas/2.jpg" alt="")
+          .product-gallery-thumbs
+            .slide
+              .image: img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/2.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/1.jpg" alt="")
+            .slide
+              .image: img(src="images/schemas/2.jpg" alt="")
+        .m_docs
+          .section-title
+            h3 Документация
+          .list
+            - for (var x = 0; x < 6; x++)
+              .item
+                a(href="#") Название документа для скачивания
+        .m_info
+          .title Хотите получить больше информации?
+          p Оставьте заявку и мы ответим на все ваши вопросы
+          .action
+            a(class="popup button red" href="#popup-order") Оставить заявку
+        .description
+          article
+            .section-title
+              h3 Описание
+            lorem(size="6")
+        .table
+          .section-title
+            h3 Характеристики
+          table
+            tr
+              th Наименование параметра
+              th(colspan="6") Значение параметра
+            tr
+              td Ном. мощность трансформатора, кВА
+              td 25
+              td 40
+              td 63
+              td 100
+              td 160
+              td 250
+            tr
+              td Ном. напряжение на стороне ВН, кВ
+              td(colspan="6") 6; 10
+            tr
+              td Ном. напряжение на стороне ВН, кВ
+              td(colspan="6") 0,5
+            tr
+              td(colspan="7") Номинальный ток сборных шин на стороне,кА:
+            tr
+              td ВН         6/10
+              td 8/5
+              td 10/8
+              td 16/10
+              td 24/16
+              td 25/20
+              td 40/31.5
+            tr
+              td HH
+              td 0.07
+              td 0.10
+              td 0.16
+              td 0.25
+              td 0.40
+              td 0.63
+            tr
+              td BH
+              td(colspan="6") 1000
+            tr
+              td HH
+              td(colspan="6") 1.0
+        .m_info
+          .title Хотите получить больше информации?
+          p Оставьте заявку и мы ответим на все ваши вопросы
+          .action
+            a(class="popup button red" href="#popup-order") Оставить заявку

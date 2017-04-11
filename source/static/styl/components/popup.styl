@@ -1,0 +1,216 @@
+.popup-window
+  max-width 540px
+  background #fff
+  margin 10px auto
+  padding 15px
+  @media XS
+    padding 40px 70px
+  button.mfp-close
+    font-size 0
+    width 30px
+    height 30px
+    &:after
+      content ''
+      background: url('../images/sprite.png') no-repeat 0 0;
+      width: 13px;
+      height: 13px;
+      position absolute
+      left 50%
+      top 50%
+      margin-left -(@width/2)
+      margin-top -(@height/2)
+    &:hover:after
+      background-position -50px 0
+  .order-image
+    border 1px solid $border
+    text-align center
+    padding 15px
+    margin-bottom 15px
+  .title
+    font-size 24px
+    margin-bottom 25px
+    @media MD
+      font-size 30px
+    h3
+      font-size 18px
+      font-weight normal
+      @media MD
+        font-size 24px
+    .cost
+      padding 15px 0
+      font-weight bold
+      font-size 16px
+      border-bottom 1px solid $border
+  p
+    font-size 15px
+    line-height 24px
+    margin-bottom 0
+  form
+    .form-row
+      margin-top 15px
+      label
+        display block
+        &.required
+          .label
+            &:after
+              content '*'
+              color $red
+        .label
+          display block
+          font-size 15px
+          padding 5px 0
+          text-transform uppercase
+        input,
+        textarea
+          trs(border-color)
+          width 100%
+          border 1px solid #e1e4ef
+          padding 15px
+          font-size 15px
+          line-height 1
+          font-family 'Noto Sans', sans-serif
+          border-radius $radius
+          color #333
+          &:focus
+            border-color $blue
+            color #333
+        textarea
+          resize none
+          min-height 100px
+          line-height 1.2
+          padding-top 10px
+    .attach-file
+      display inline-block
+      vertical-align middle
+      .attach-file-result
+        display none
+        font-size 15px
+        // display inline-block
+        // vertical-align middle
+        position relative
+        .remove
+          position absolute
+          background: url('../images/sprite.png') no-repeat -50px 0;
+          width: 13px;
+          height: 13px;
+          right -20px
+          top 50%
+          margin-top -(@height/2)
+          cursor pointer
+      label
+        display inline-block
+        vertical-align middle
+        cursor pointer
+        &:hover
+          .text, .icon
+            border-color $blue
+          .icon
+            &:after
+              background-position -50px -50px
+      input
+        display none
+      .text
+        trs(border-color)
+        float left
+        height 52px
+        line-height 52px
+        border 1px solid #e1e4ef
+        margin-left -1px
+        font-size 15px
+        padding 0 20px
+        border-radius 0 $radius $radius 0
+      .icon
+        trs(border-color)
+        position relative
+        border 1px solid #e1e4ef
+        height 52px
+        width 52px
+        float left
+        border-radius $radius 0 0 $radius
+        &:after
+          content ''
+          background: url('../images/sprite.png') no-repeat 0 -50px;
+          width: 24px;
+          height: 22px;
+          position absolute
+          left 50%
+          top 50%
+          margin-left -(@width/2)
+          margin-top -(@height/2)
+
+#popup-gallery
+  padding 15px
+  padding-top 30px
+  max-width 1170px
+  @media LG
+    padding 30px
+  .large
+    margin-bottom 15px
+    .m_media-item
+      height auto
+      max-height 700px
+    .slick-list,
+    .slick-track,
+    .slide
+      height 100%
+    .slick-arrow
+      position absolute
+      top 50%
+      width 40px
+      height 40px
+      margin-top -20px
+      font-size 0
+      background-color transparent
+      border 1px solid #fff
+      z-index 1
+      &:hover
+        border-color $blue
+      &:after
+        content ''
+        width 10px
+        height 16px
+        margin-top -8px
+        margin-left -(@width/2)
+        position absolute
+        left 50%
+        top 50%
+        background-image url("../images/sprite.png")
+        background-repeat no-repeat
+      &.slick-disabled
+        opacity .2
+      &.slick-prev
+        left 15px
+        &:after
+          background-position -250px -50px
+        &:hover
+          &:after
+            background-position -250px -100px
+      &.slick-next
+        right 15px
+        &:after
+          background-position -200px -50px
+        &:hover
+          &:after
+            background-position -200px -100px
+  .thumbs
+    .m_media-item
+      height 70px
+    .slick-list
+      margin 0 -5px
+    .slick-slide
+      margin 0 5px
+      &.slick-current
+        .image
+          border 1px solid $red
+      .image
+        anim()
+        border 1px solid $border
+        height 70px
+        line-height 55px
+        text-align center
+        padding 0
+        img
+          display inline-block
+          vertical-align middle
+          width 100%
+          height 100%

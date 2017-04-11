@@ -1,0 +1,88 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Новости
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/9.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Новости
+      .title
+        span Новости
+  main
+    aside.m_sidebar.right
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") О компании
+          li: a(href="#") Вакансии
+          li: a(href="#") Контакты
+          li: a(href="#") Новости
+          li: a(href="#") Медиагалерея
+    .content
+      .columns.col-3
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        .column
+          .m_news-item(itemscope itemtype="http://schema.org/NewsArticle")
+            .post-date(itemprop="dateCreated") 11 ноября 2017
+            .title: a(href="#" itemprop="description") «СТОРГЕ» на IDES Siberia-2014
+            .desc Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+      .m_paginations
+        ul
+          li: a(class="prev" href="#")
+          li: a(href="#") 1
+          li: a(href="#") 2
+          li: a(href="#") 3
+          li: a(href="#") 4
+          li: a(href="#") 5
+          li: a(href="#") 6
+          li: a(href="#") 7
+          li: a(href="#") 8
+          li: a(href="#") 9
+          li: a(href="#") 10
+          li: a(class="next" href="#")

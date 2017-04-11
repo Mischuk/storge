@@ -1,0 +1,27 @@
+.responsive-table
+  width 100%
+  max-width 100%
+  overflow-x auto
+  table
+    width 100%
+    min-width 350px
+    font-size 13px
+    th
+      font-weight normal
+      text-align left
+      & + th
+        text-align center
+    th, td
+      anim()
+      padding 15px
+      background #f5f5f5
+      border 1px solid #fff
+      @media LG
+        padding 11px 10px
+    td
+      & + td
+        text-align center
+    tr
+      &:hover
+        td
+          background #f5f5f5 - 5%

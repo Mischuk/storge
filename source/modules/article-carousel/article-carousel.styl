@@ -1,0 +1,85 @@
+.article-carousel
+  position relative
+  width 100%
+  .slick-list,
+  .slick-track,
+  .slide
+    height 100%
+  .slick-arrow
+    width 40px
+    height 40px
+    background none
+    border 2px solid #fff
+    position absolute
+    top 50%
+    margin-top -20px
+    z-index 1
+    text-indent -9999px
+    display none !important
+    @media LG
+      display block !important
+    &:hover
+      border-color $blue
+    &:after
+      content ''
+      background-image url('../images/sprite.png')
+      background-repeat no-repeat
+      width: 10px;
+      height: 16px;
+      position absolute
+      left 50%
+      top 50%
+      margin-left -(@width/2)
+      margin-top -(@height/2)
+    &.slick-prev
+      left 15px
+      &:after
+        background-position -250px -50px
+      &:hover
+        &:after
+          background-position -250px -100px
+    &.slick-next
+      right 15px
+      &:after
+        background-position -200px -50px
+      &:hover
+        &:after
+          background-position -200px -100px
+  .slick-dots
+    position absolute
+    left 0
+    bottom 15px
+    width 100%
+    text-align center
+    li
+      display inline-block
+      vertical-align middle
+      margin 0 5px
+      &.slick-active
+        button
+          border-color #fff
+      button
+        anim()
+        position relative
+        width 16px
+        height 16px
+        color transparent
+        border 2px solid transparent
+        background none
+        border-radius 50%
+        &:after
+          content ''
+          width 8px
+          height 8px
+          position absolute
+          left 50%
+          top 50%
+          margin-left -(@width/2)
+          margin-top -(@height/2)
+          background white
+          border-radius 50%
+
+  .slide
+    position relative
+    width 100%
+    max-width 100%

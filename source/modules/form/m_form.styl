@@ -1,0 +1,147 @@
+.m_form
+  background #f5f7ff
+  border 1px solid #e1e4ef
+  padding 15px
+  margin-top 30px
+  @media LG
+    padding 30px
+  .title
+    font-size 24px
+    margin-bottom 25px
+    @media MD
+      font-size 30px
+    h3
+      font-size 18px
+      font-weight normal
+      @media MD
+        font-size 24px
+    .cost
+      padding 15px 0
+      font-weight bold
+      font-size 16px
+      border-bottom 1px solid $border
+  form
+    max-width 640px
+    .form-row
+      margin-top 15px
+      .label
+        display block
+        font-size 15px
+        padding 5px 0
+        text-transform uppercase
+        @media LG
+          float left
+          width 25%
+          line-height 50px
+          padding-top 0
+          padding-bottom 0
+        &.required
+          &:after
+            content '*'
+            color $red
+      label
+        display block
+        @media LG
+          clearfix()
+        &.required
+          .label
+            &:after
+              content '*'
+              color $red
+        .label
+          display block
+          font-size 15px
+          padding 5px 0
+          text-transform uppercase
+          @media LG
+            float left
+            width 25%
+            line-height 50px
+            padding-top 0
+            padding-bottom 0
+        input,
+        textarea
+          trs(border-color)
+          width 100%
+          border 1px solid #e1e4ef
+          padding 15px
+          font-size 15px
+          line-height 1
+          font-family 'Noto Sans', sans-serif
+          border-radius $radius
+          color #333
+          @media LG
+            float left
+            width 75%
+          &:focus
+            border-color $blue
+            color #333
+        textarea
+          resize none
+          min-height 100px
+          line-height 1.2
+          padding-top 10px
+    button[type=submit]
+      @media LG
+        margin-left 25%
+    .attach-file
+      display inline-block
+      vertical-align middle
+      @media LG
+        display block
+        width 100%
+      .attach-file-result
+        display none
+        font-size 15px
+        // display inline-block
+        // vertical-align middle
+        position relative
+        .remove
+          position absolute
+          background: url('../images/sprite.png') no-repeat -50px 0;
+          width: 13px;
+          height: 13px;
+          right -20px
+          top 50%
+          margin-top -(@height/2)
+          cursor pointer
+      label
+        display inline-block
+        vertical-align middle
+        cursor pointer
+        &:hover
+          .text, .icon
+            border-color $blue
+          .icon
+            &:after
+              background-position -50px -50px
+      input
+        display none
+      .text
+        trs(border-color)
+        float left
+        height 52px
+        line-height 52px
+        border 1px solid #e1e4ef
+        margin-left -1px
+        font-size 15px
+        padding 0 20px
+        border-radius 0 $radius $radius 0
+      .icon
+        trs(border-color)
+        position relative
+        border 1px solid #e1e4ef
+        height 52px
+        width 52px
+        float left
+        border-radius $radius 0 0 $radius
+        &:after
+          content ''
+          background: url('../images/sprite.png') no-repeat 0 -50px;
+          width: 24px;
+          height: 22px;
+          position absolute
+          left 50%
+          top 50%
+          margin-left -(@width/2)
+          margin-top -(@height/2)

@@ -1,1 +1,27 @@
-header.m_header header
+header.m_header
+  .top-row
+    .wrapper
+      .search
+        form
+          input(type="text" placeholder="")
+          button(type="submit")
+  .bottom-row
+    .wrapper
+      .logo: a(href="#"): img(src="images/logo.png" title="Сторге" alt="")
+      .menu-mobile: a(href="#"): span
+      nav.menu
+        ul.lead-menu
+          li: a(href="#") О компании
+          li: a(href="#") Медагалерея
+          li: a(href="#") Вакансии
+          li: a(href="#") Контакты
+          li: a(href="#") Опросные листы
+          li: a(href="#") Лицензии
+          li: a(href="#") Отзывы
+        ul.second-menu
+          li: a(href="#"): span Продукция
+          li: a(href="#"): span Проектировщикам
+          li: a(href="#"): span Заполнить опросный лист
+      .contacts
+        .tel: a(href="tel:+78123181448") +7 (812) 318-14-48
+        .callback: a(class="popup" href="#popup-callback") Заказать <span>обратный</span> звонок

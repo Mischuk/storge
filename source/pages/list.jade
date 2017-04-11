@@ -1,0 +1,74 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Опросные листы
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/5.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Опросные листы
+      .title
+        span Опросные листы
+  main
+    aside.m_sidebar.right
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") Опросные листы
+          li: a(href="#") Лицензии
+          li: a(href="#") Отзывы
+          li: a(href="#") Референс-лист
+      .m_sidebar-consult
+        .title Получить бесплатную консультацию
+        p У вас есть вопросы? Наши сотрудники с удовольствием ответят на них.
+        .action
+          a(class="popup button red" href="#popup-help") Отправить запрос
+        .tel
+          span или связаться с нами по телефону
+          a(href="tel:+78123181448") +7 (812) 318-14-48
+    .content
+      article
+        lorem(size="5")
+        lorem(size="5")
+      .m_docs
+        .list
+          - for (var x = 0; x < 6; x++)
+            .item
+              a(href="#") Название документа для скачивания
+      .m_form
+        .title Связаться с нами
+        form
+          .form-row
+            label.required
+              span.label ФИО
+              input(type="text" placeholder="Иванов Иван Иванович" required autocomplete="off")
+          .form-row
+            label.required
+              span.label Телефон
+              input(type="tel" class="mask-tel" placeholder="+7 (___) ___-__-__" required autocomplete="off")
+          .form-row
+            label.required
+              span.label E-mail
+              input(type="email" name="buy-email" placeholder="info@yourmail.com" required autocomplete="off")
+          .form-row
+            label.required
+              span.label Комментарий
+              textarea(name="buy-message" placeholder="Дополнительная информация" required)
+          .form-row
+            .attach-file
+              .label &nbsp;
+              label
+                input(type="file" name="ask-file")
+                span.icon
+                span.text Прикрепить файл
+              .attach-file-result
+                .val
+                .remove(title="Удалить файл")
+          .form-row
+            button(class="button red" type="submit") Откликнуться на вакансию

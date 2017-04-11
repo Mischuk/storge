@@ -1,0 +1,65 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title Референс-лист
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/6.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") Референс-лист
+      .title
+        span Референс-лист
+  main
+    aside.m_sidebar.right
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") Опросные листы
+          li: a(href="#") Лицензии
+          li: a(href="#") Отзывы
+          li: a(href="#") Референс-лист
+      .m_sidebar-consult
+        .title Получить бесплатную консультацию
+        p У вас есть вопросы? Наши сотрудники с удовольствием ответят на них.
+        .action
+          a(class="popup button red" href="#popup-help") Отправить запрос
+        .tel
+          span или связаться с нами по телефону
+          a(href="tel:+78123181448") +7 (812) 318-14-48
+    .content
+      .m_ref-list
+        table
+          tr
+            th Заказчик
+            th Название работ
+            th Населенный пункт
+          tr
+            td: img(src="images/ref/1.png" alt="")
+            td Название работы
+            td г. Москва
+          tr
+            td: img(src="images/ref/2.png" alt="")
+            td Название работы
+            td г. Москва
+          tr
+            td: img(src="images/ref/3.png" alt="")
+            td Название работы
+            td г. Москва
+          tr
+            td: img(src="images/ref/4.png" alt="")
+            td Название работы
+            td г. Москва
+          tr
+            td: img(src="images/ref/5.png" alt="")
+            td Название работы
+            td г. Москва
+      article
+        h3 Текст о том что такое референс лист и для чего он нужен
+        lorem(size="2")
+        lorem(size="2")

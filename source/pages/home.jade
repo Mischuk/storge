@@ -7,6 +7,110 @@ block data
   include ../static/content/_home.jade
 
 block content
-  h1 Hello, world!
-  section
-    lorem(size="2")
+  // Lead carousel
+  .m_lead-carousel
+    .lead-carousel
+      - each post in lead_carousel
+        .slide
+          .image(style="background-image: url('#{post.image}')")
+          .wrapper
+            .text
+              .vertical-outer
+                .vertical-inner
+                  h2 #{post.title}
+                  .action: a(class="button red popup" href="#popup-ask") Задать вопрос
+  // Products
+  .m_products
+    .wrapper
+      .columns.col-4
+        - each post in lead_products
+          .column
+            .m_item
+              .image
+                a(href="#")
+                  img(src="#{post.image}" alt="")
+              .title
+                a(href="#") #{post.title}
+      .details-button.center
+        a(href="#") Вся продукция
+  // Story and Media
+  .m_story-media
+    .wrapper
+      .story
+        .section-title.border
+          h2 Компания ООО «СТОРГЕ»
+        .m_about-icons
+          .columns.col-3
+            - each post in about_icons
+              .column
+                .item(style="background-image: url('#{post.image}')")
+                  .vertical-outer
+                    .vertical-inner
+                      .text #{post.title}
+        article
+          p(lorem="3")
+          p(lorem="6")
+          p(lorem="1")
+      .media
+        .section-title
+          h3 Медиагалерея
+        .list
+          .item
+            .image
+              a(href="#")
+                img(src="images/gallery/2.jpg" alt="")
+            .title: a(href="#") Инновационный выключатель нагрузки LBI 12-24 кВ
+          .item.is-video
+            .image
+              a(href="#")
+                img(src="images/gallery/6.jpg" alt="")
+            .title: a(href="#") Корпоративный презентационный день "МРСК Северо-Запад", Санкт-Петербург, 2014
+        .details-button.small
+          a(href="#") Посмотреть всё
+  // Map and news
+  .m_map-news
+    .wrapper
+      .map
+        .section-title
+          h2 География нашей продукции
+        script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        script.
+          ymaps.ready(init);
+          function init () {
+              var myMap = new ymaps.Map('map', {
+                      center: [55.76, 37.64],
+                      zoom: 11,
+                      controls: ['zoomControl']
+                  }, {
+                      searchControlProvider: 'yandex#search'
+                  }),
+                  objectManager = new ymaps.ObjectManager({
+                    clusterize: false,
+                    gridSize: 32
+                  });
+              objectManager.objects.options.set({
+                iconLayout: 'default#image',
+                iconImageHref: 'images/marker.png',
+                iconImageSize: [58, 38],
+                iconImageOffset: [-29, -19]
+              });
+              myMap.geoObjects.add(objectManager);
+              myMap.behaviors.disable('scrollZoom');
+
+              $.ajax({
+                  url: "data.json"
+              }).done(function(data) {
+                  objectManager.add(data);
+              });
+          }
+        #map
+      .news
+        .section-title
+          h3 Новости
+        .list
+          - each post in lead_news
+            .m_news-item
+              .post-date #{post.date}
+              .title: a(href="#") #{post.title}
+        .details-button.small
+          a(href="#") Все новости

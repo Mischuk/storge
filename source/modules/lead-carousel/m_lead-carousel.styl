@@ -1,0 +1,132 @@
+.m_lead-carousel
+  width 100%
+  max-width 100%
+  .lead-carousel
+    position relative
+    width 100%
+    height 350px
+    @media MD
+      height 500px
+  .slick-list,
+  .slick-track,
+  .slide
+    height 100%
+  .slick-arrow
+    width 40px
+    height 40px
+    background none
+    border 2px solid #fff
+    position absolute
+    top 50%
+    margin-top -20px
+    z-index 1
+    text-indent -9999px
+    display none !important
+    @media LG
+      display block !important
+    &:hover
+      border-color $blue
+    &:after
+      content ''
+      background-image url('../images/sprite.png')
+      background-repeat no-repeat
+      width: 10px;
+      height: 16px;
+      position absolute
+      left 50%
+      top 50%
+      margin-left -(@width/2)
+      margin-top -(@height/2)
+    &.slick-prev
+      left 50%
+      margin-left -575px
+      &:after
+        background-position -250px -50px
+      &:hover
+        &:after
+          background-position -250px -100px
+    &.slick-next
+      right 50%
+      margin-right -575px
+      &:after
+        background-position -200px -50px
+      &:hover
+        &:after
+          background-position -200px -100px
+  .slick-dots
+    position absolute
+    left 0
+    bottom 15px
+    width 100%
+    text-align center
+    li
+      display inline-block
+      vertical-align middle
+      margin 0 5px
+      &.slick-active
+        button
+          border-color #fff
+      button
+        anim()
+        position relative
+        width 16px
+        height 16px
+        color transparent
+        border 2px solid transparent
+        background none
+        border-radius 50%
+        &:after
+          content ''
+          width 8px
+          height 8px
+          position absolute
+          left 50%
+          top 50%
+          margin-left -(@width/2)
+          margin-top -(@height/2)
+          background white
+          border-radius 50%
+
+  .slide
+    position relative
+    width 100%
+    max-width 100%
+    .image
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      background-repeat no-repeat
+      background-position 50%
+      background-size cover
+    .text
+      position relative
+      z-index 1
+      height 100%
+      width 100%
+      color #fff
+      text-align center
+      @media SM
+        padding-left 30px
+        padding-right 30px
+        text-align left
+      @media LG
+        padding-left 100px
+        padding-right 50px
+      h2
+        font-size 30px
+        line-height 1
+        margin-bottom 15px
+        word-break break-word
+        max-height 213px
+        overflow hidden
+        @media SM
+          max-width 75%
+        @media MD
+          margin-bottom 45px
+          font-size 50px
+          max-height 305px
+      .action
+        margin-bottom 25px
+

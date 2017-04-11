@@ -1,0 +1,45 @@
+.m_comments
+  position relative
+  @media XS
+    padding-top 30px
+  @media SM
+    padding-top 0
+  .item
+    & + .item
+      border-top 1px solid $border
+      padding-top 30px
+      margin-top 30px
+    .image
+      display none
+      @media XS
+        border 3px solid $border
+        display block
+        width 35%
+        width 170px
+        float left
+        margin-right 10px
+      img
+        width 100%
+        display block
+  .desc
+    @media XS
+      min-height 240px
+    .title
+      font-size 24px
+      @media MD
+        font-size 30px
+    .username
+      color #999999
+      font-size 14px
+      padding 10px 0
+    .message
+      font-size 14px
+      line-height 24px
+      color #000
+    .details
+      padding-top 10px
+      a
+        font-size 14px
+        color $blue
+        &:hover
+          color #000

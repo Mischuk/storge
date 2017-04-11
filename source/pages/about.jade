@@ -1,0 +1,98 @@
+extends ../modules/layout/layout.jade
+
+block title
+  title О компании
+
+block data
+  include ../static/content/_home.jade
+
+block content
+  .page-title(style="background-image: url('images/page-title/2.jpg')")
+    .wrapper
+      .m_breadcrumbs
+        ul
+          li: a(href="#") Главная
+          li: a(href="#") О компании
+      .title
+        span О компании
+  main
+    aside.m_sidebar.right
+      .button.bfxd
+      .m_sidebar-menu
+        ul
+          li: a(href="#") О компании
+          li: a(href="#") Вакансии
+          li: a(href="#") Контакты
+          li: a(href="#") Новости
+          li: a(href="#") Медиагалерея
+    .content
+      article
+        p(lorem="2")
+        ul
+          li КТП и БКТП 10(6)/0.4 кВ различных конфигураций до 2500 кВА, в железобетонных и металлических корпусах киоскового, столбового и мачтового типа, утепленных контейнерах с внутренними коридорами обслуживания
+          li БР(Т)П с различными вариантами схемных и компоновочных решений
+          li КТП для внутрицеховой установки
+          li КСО серий 300, 200, КРУН
+          li ЩО-70, УВР, ВРУ, НКУ
+          li выключатели нагрузки и разъединители LBI 12-24 кВ, GS-12кВ и проч.
+        img(src="images/about.jpg" alt="")
+        p(lorem="2")
+        ul
+          li КТП и БКТП 10(6)/0.4 кВ различных конфигураций до 2500 кВА, в железобетонных и металлических корпусах киоскового, столбового и мачтового типа, утепленных контейнерах с внутренними коридорами обслуживания
+          li БР(Т)П с различными вариантами схемных и компоновочных решений
+          li КТП для внутрицеховой установки
+          li КСО серий 300, 200, КРУН
+          li ЩО-70, УВР, ВРУ, НКУ
+          li выключатели нагрузки и разъединители LBI 12-24 кВ, GS-12кВ и проч.
+        p(lorem="4")
+        p(lorem="5")
+      .m_story-media
+        .wrapper
+          .story.full
+            .section-title.border
+              h3 Наши преимущества
+            .m_about-icons
+              .columns.col-3
+                - each post in about_icons
+                  .column
+                    .item(style="background-image: url('#{post.image}')")
+                      .vertical-outer
+                        .vertical-inner
+                          .text #{post.title}
+      // Map and news
+      .m_map-news
+        .wrapper
+          .map.full
+            .section-title
+              h3 География нашей продукции
+            script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+            script.
+              ymaps.ready(init);
+              function init () {
+                  var myMap = new ymaps.Map('map', {
+                          center: [55.76, 37.64],
+                          zoom: 11,
+                          controls: ['zoomControl']
+                      }, {
+                          searchControlProvider: 'yandex#search'
+                      }),
+                      objectManager = new ymaps.ObjectManager({
+                        clusterize: false,
+                        gridSize: 32
+                      });
+                  objectManager.objects.options.set({
+                    iconLayout: 'default#image',
+                    iconImageHref: 'images/marker.png',
+                    iconImageSize: [58, 38],
+                    iconImageOffset: [-29, -19]
+                  });
+                  myMap.geoObjects.add(objectManager);
+                  myMap.behaviors.disable('scrollZoom');
+
+                  $.ajax({
+                      url: "data.json"
+                  }).done(function(data) {
+                      objectManager.add(data);
+                  });
+              }
+            #map
